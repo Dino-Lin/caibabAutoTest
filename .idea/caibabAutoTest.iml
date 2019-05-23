@@ -6,8 +6,8 @@
       <sourceFolder url="file://$MODULE_DIR$/pccaibab" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/case" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/case/blog" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/case/baidu" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/htmlReportTest" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/case/baidu" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.7 (3)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
