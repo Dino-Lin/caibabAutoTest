@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7edf6e6-cf3f-4acd-a258-0b9fe63b2720" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pccaibab/case/testLogin.py" beforeDir="false" afterPath="$PROJECT_DIR$/pccaibab/case/testLogin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,14 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pccaibab/case/testLogin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="14" column="65" lean-forward="true" selection-start-line="14" selection-start-column="65" selection-end-line="14" selection-end-column="65" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="125">
+              <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -27,11 +24,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/report/run_all_case.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+            <state relative-caret-position="500">
+              <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
               <folding>
                 <element signature="e#22#37#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/webuiScripts/caibab/cbbGysLogin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="55">
+              <caret line="17" column="59" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
+              <folding>
+                <element signature="e#24#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://D:/webuiScripts/unittest/UnittestDemo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="505">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -92,36 +110,38 @@
             </path>
             <path>
               <item name="caibabAutoTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="caibabAutoTest" type="462c0819:PsiDirectoryNode" />
-              <item name="htmlReportTest" type="462c0819:PsiDirectoryNode" />
+              <item name="webuiScripts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="caibabAutoTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="caibabAutoTest" type="462c0819:PsiDirectoryNode" />
-              <item name="pccaibab" type="462c0819:PsiDirectoryNode" />
+              <item name="webuiScripts" type="462c0819:PsiDirectoryNode" />
+              <item name="caibab" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="caibabAutoTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="caibabAutoTest" type="462c0819:PsiDirectoryNode" />
-              <item name="pccaibab" type="462c0819:PsiDirectoryNode" />
-              <item name="case" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="caibabAutoTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="caibabAutoTest" type="462c0819:PsiDirectoryNode" />
-              <item name="pccaibab" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="caibabAutoTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="caibabAutoTest" type="462c0819:PsiDirectoryNode" />
-              <item name="report" type="462c0819:PsiDirectoryNode" />
+              <item name="webuiScripts" type="462c0819:PsiDirectoryNode" />
+              <item name="unittest" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="caibabAutoTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="D:\pyWorkspace\caibabAutoTest" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="caibabAutoTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="D:\pyWorkspace\caibabAutoTest" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name=".idea" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -151,7 +171,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.testLogin">
+  <component name="RunManager" selected="Python.run_all_case">
     <configuration name="cbbGysLogin" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="webuiScripts" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -249,10 +269,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.run_all_case" />
         <item itemvalue="Python.testLogin" />
         <item itemvalue="Python.cbbGysLogin" />
         <item itemvalue="Python tests.Unittests for testLogin.TestLogin.testLogin" />
-        <item itemvalue="Python.run_all_case" />
         <item itemvalue="Python.test_HTMLTestReportCN" />
       </list>
     </recent_temporary>
@@ -289,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558605865933</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="添加了测试代码">
+      <created>1558923860119</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1558923860119</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -305,14 +332,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20547946" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20547946" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2165059" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2165059" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -330,7 +356,8 @@
     <MESSAGE value="材巴巴自动化测试" />
     <MESSAGE value="添加了testSuite和中文化测试报告" />
     <MESSAGE value="添加了cbb登录" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加了cbb登录" />
+    <MESSAGE value="添加了测试代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加了测试代码" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pccaibab/__init__.py" />
@@ -398,16 +425,6 @@
     <entry file="file://D:/webuiScripts/caibab/geckodriver.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://D:/webuiScripts/caibab/cbbGysLogin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="17" column="59" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
-          <folding>
-            <element signature="e#24#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/case/baidu/test_02.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -435,13 +452,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/webuiScripts/unittest/UnittestDemo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="26" selection-start-line="26" selection-end-line="27" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/htmlReportTest/HTMLTestReportCN.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -452,23 +462,37 @@
     <entry file="file://$PROJECT_DIR$/pccaibab/case/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/pccaibab/case/testLogin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/report/run_all_case.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        <state relative-caret-position="500">
+          <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
           <folding>
             <element signature="e#22#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pccaibab/case/testLogin.py">
+    <entry file="file://D:/webuiScripts/caibab/cbbGysLogin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="65" lean-forward="true" selection-start-line="14" selection-start-column="65" selection-end-line="14" selection-end-column="65" />
+        <state relative-caret-position="55">
+          <caret line="17" column="59" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#24#54#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/webuiScripts/unittest/UnittestDemo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
