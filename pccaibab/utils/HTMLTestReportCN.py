@@ -86,7 +86,7 @@ Version 0.8.2
 
 Version in 0.8.1
 * Validated XHTML (Wolfgang Borgert).
-* Added description of test classes and test cases.
+* Added description of test classes and test testcases.
 
 Version in 0.8.0
 * Define Template_mixin class for customization.
@@ -111,7 +111,7 @@ import sys
 # ------------------------------------------------------------------------
 # The redirectors below are used to capture output during testing. Output
 # sent to sys.stdout and sys.stderr are automatically captured. However
-# in some cases sys.stdout is already cached before HTMLTestRunner is
+# in some testcases sys.stdout is already cached before HTMLTestRunner is
 # invoked (e.g. calling logging.basicConfig). In order to capture those
 # output, use the redirectors for the cached stream.
 #
@@ -566,7 +566,7 @@ class HTMLTestRunner(Template_mixin):
 
 
     def run(self, test):
-        "Run the given test case or test suite."
+        "Run the given test testcases or test suite."
         result = _TestResult(self.verbosity)
         test(result)
         self.stopTime = datetime.datetime.now()
