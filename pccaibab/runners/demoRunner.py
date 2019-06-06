@@ -8,7 +8,8 @@ import datetime
 
 if __name__ == "__main__":
     suite = unittest.TestSuite()
-    test_cases = [demoCase.DemoTestCase("test_clickSomething"),demoCase.DemoTestCase("test_clickOneMorething")]
+    #test_cases = [demoCase.DemoTestCase("test_clickSomething"),demoCase.DemoTestCase("test_clickOneMorething")]
+    test_cases = [demoCase.DemoTestCase("test_openMoreTap")]
     suite.addTests(test_cases)
     fileEnd = datetime.datetime.now().strftime('%Y%m%d%H%M')
     filePath = 'F:\\HTMLTestReportCN'+fileEnd+'.html'
