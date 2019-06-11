@@ -17,7 +17,14 @@ class CommonLogin:
 
 
     def cgsLogin(self,driver):
-        pass
+        self.driver = driver
+        self.driver.maximize_window()
+        self.driver.get("http://www.caibab.com")
+        self.driver.implicitly_wait(3)
+        WebDriverWait(self.driver, 10).until(EC.title_contains("材巴巴"))
+        self.driver.find_element_by_xpath("//a[@class='orange-color']").click()
+        WebDriverWait(self.driver, 10).until(EC.url_contains("passport"))
+        self.login(self, "cc55", "12345678")
 
     def gysLogin(self,driver):
         self.driver = driver
