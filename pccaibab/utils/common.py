@@ -22,3 +22,11 @@ def isElementExistWithCssName(driver,element):
     except:
         flag = False
         return flag
+def isElementExistWithLinkText(driver,element):
+    flag = True
+    try:
+        driver.find_element_by_link_text(element)
+        return flag
+    except:
+        flag = False
+        return flag
