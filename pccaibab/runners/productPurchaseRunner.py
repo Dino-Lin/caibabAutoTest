@@ -5,11 +5,9 @@ from testcases import productPurchaseCase
 from utils import HTMLTestReportCN
 import datetime
 
-
 if __name__ == "__main__":
     suite = unittest.TestSuite()
-    #test_cases = [demoCase.DemoTestCase("test_clickSomething"),demoCase.DemoTestCase("test_clickOneMorething")]
-    test_cases = [productPurchaseCase.ProductPurchaseTestCase("test_normalBuy")]
+    test_cases = [productPurchaseCase.ProductPurchaseTestCase("test_minBuy"),productPurchaseCase.ProductPurchaseTestCase("test_maxBuy"),productPurchaseCase.ProductPurchaseTestCase("test_normalBuy"),productPurchaseCase.ProductPurchaseTestCase("test_addAndBuy")]
     suite.addTests(test_cases)
     fileEnd = datetime.datetime.now().strftime('%Y%m%d%H%M')
     filePath = 'F:\\HTMLTestReportCN'+fileEnd+'.html'

@@ -20,7 +20,7 @@ class CommonLogin:
         self.driver = driver
         self.driver.maximize_window()
         self.driver.get("http://www.caibab.com")
-        self.driver.implicitly_wait(3)
+        self.driver.implicitly_wait(2)
         WebDriverWait(self.driver, 10).until(EC.title_contains("材巴巴"))
         self.driver.find_element_by_xpath("//a[@class='orange-color']").click()
         WebDriverWait(self.driver, 10).until(EC.url_contains("passport"))
@@ -30,7 +30,7 @@ class CommonLogin:
         self.driver = driver
         self.driver.maximize_window()
         self.driver.get("http://www.caibab.com")
-        self.driver.implicitly_wait(3)
+        self.driver.implicitly_wait(2)
         WebDriverWait(self.driver, 10).until(EC.title_contains("材巴巴"))
         self.driver.find_element_by_xpath("//a[@class='orange-color']").click()
         WebDriverWait(self.driver, 10).until(EC.url_contains("passport"))
