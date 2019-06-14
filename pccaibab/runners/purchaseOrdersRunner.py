@@ -9,7 +9,7 @@ import datetime
 if __name__ == "__main__":
     suite = unittest.TestSuite()
     #test_cases = [demoCase.DemoTestCase("test_clickSomething"),demoCase.DemoTestCase("test_clickOneMorething")]
-    test_cases = [purchaseOrdersCase.PurchaseOrdersTestCase("test_notStarted"),purchaseOrdersCase.PurchaseOrdersTestCase("test_notShow"),purchaseOrdersCase.PurchaseOrdersTestCase("test_signup_notStarted"),purchaseOrdersCase.PurchaseOrdersTestCase("test_signup_End")]
+    test_cases = [purchaseOrdersCase.PurchaseOrdersTestCase("test_notStarted"),purchaseOrdersCase.PurchaseOrdersTestCase("test_notShow"),purchaseOrdersCase.PurchaseOrdersTestCase("test_signup_End"),purchaseOrdersCase.PurchaseOrdersTestCase("test_signup_notStarted")]
     #test_cases = [purchaseOrdersCase.PurchaseOrdersTestCase("test_signup_notStarted")]
     suite.addTests(test_cases)
     fileEnd = datetime.datetime.now().strftime('%Y%m%d%H%M')
