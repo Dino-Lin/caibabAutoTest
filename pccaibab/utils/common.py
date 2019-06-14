@@ -17,7 +17,7 @@ def isElementExistWithCssSelector(driver, element):
 def isElementExistWithCssName(driver,element):
     flag = True
     try:
-        driver.find_element_by_class_name(element)
+        driver.find_element_by_class_name
         return flag
     except:
         flag = False

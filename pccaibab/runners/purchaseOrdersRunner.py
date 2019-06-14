@@ -9,7 +9,8 @@ import datetime
 if __name__ == "__main__":
     suite = unittest.TestSuite()
     #test_cases = [demoCase.DemoTestCase("test_clickSomething"),demoCase.DemoTestCase("test_clickOneMorething")]
-    test_cases = [purchaseOrdersCase.PurchaseOrdersTestCase("test_notStarted"),purchaseOrdersCase.PurchaseOrdersTestCase("test_notShow")]
+    test_cases = [purchaseOrdersCase.PurchaseOrdersTestCase("test_notStarted"),purchaseOrdersCase.PurchaseOrdersTestCase("test_notShow"),purchaseOrdersCase.PurchaseOrdersTestCase("test_signup_notStarted"),purchaseOrdersCase.PurchaseOrdersTestCase("test_signup_End")]
+    #test_cases = [purchaseOrdersCase.PurchaseOrdersTestCase("test_signup_notStarted")]
     suite.addTests(test_cases)
     fileEnd = datetime.datetime.now().strftime('%Y%m%d%H%M')
     filePath = 'F:\\HTMLTestReportCN'+fileEnd+'.html'
@@ -19,7 +20,7 @@ if __name__ == "__main__":
         stream=fp,
         title='自动化测试报告'+fileEnd,
         # description='详细测试用例结果',
-        tester='Findyou'
+        tester='Finyou'
     )
     runner.run(suite)
     fp.close()
