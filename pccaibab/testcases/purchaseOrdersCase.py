@@ -50,7 +50,7 @@ class PurchaseOrdersTestCase(unittest.TestCase):
 
     # 已登录状态下，使用有报价权限的供应商去报价处于公示时间，报名已开始的采购单
     def test_signup_notStarted(self):
-        orderId = "WHZHX20190613009"
+        orderId = "WHZHX20190612014"
         # 先清空 再搜索
         self.driver.find_element_by_class_name("head-search-input").clear()
         self.driver.find_element_by_class_name("head-search-input").send_keys(orderId)
@@ -72,10 +72,10 @@ class PurchaseOrdersTestCase(unittest.TestCase):
         div_submit.click()
         sleep(3)
         # 切回当前窗口
-        self.driver.switch_to.window(self.driver.window_handles[-1])
+        self.driver.switch_to.window(self.driver.window_handles[0])
         # 搜索该采购单
         search = self.driver.find_element_by_xpath("//form[@id='pageForm']//input[@name='keyword']")
-        search.send_keys('WHZHX20190613009')
+        search.send_keys('WHZHX20190612014')
         search_submit = self.driver.find_element_by_xpath("//form[@id='pageForm']//button[text()='搜索']")
         search_submit.click()
         # 判断采购单是否存在 不出现这句话 就是有查询到
@@ -95,8 +95,8 @@ class PurchaseOrdersTestCase(unittest.TestCase):
         self.driver.find_element_by_class_name("head-search-input").clear()
         self.driver.find_element_by_class_name("head-search-input").send_keys(orderId)
         self.driver.find_element_by_class_name("head-search-btn").click()
-        # 等待报价按钮出现
-        submit = self.driver.find_element_by_css_selector('#root > div > div > div.wrap > div.clearfix._2EhXdGEzvtQG7cgG83tuPF > div.right._3wabwNSbYm9Vib0y4vqTw8 > div.iY946Gz-I5wmrBrCFS8Lv > div.clearfix._2vnIxjgzYdrwataLGpgJRU > div._3AsDEBG-vJW6ptvgvUHMjN > div > a')
+        # 点击立即报价
+        submit = self.driver.find_element_by_css_selector('#root > div > div > div.wrap > div.clearfix._34phGAdkvl-wtAiyH9vAHc > div > div.clearfix > div > div.clearfix._3FAgZnx0-H3B9UKC6CTJeb > div.right._21k08nZzyAB_e_XyaXVbtp > a')
         submit.click()
         # 等待详情页报价按钮出现
         self.driver.switch_to.window(self.driver.window_handles[-1])
@@ -105,7 +105,6 @@ class PurchaseOrdersTestCase(unittest.TestCase):
         self.assertEqual(True, flag)
         self.driver.close()
 
-    def tearDown(self):
         @classmethod
         def tearDownClass(cls) -> None:
                 cls.driver.quit()
