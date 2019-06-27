@@ -18,7 +18,7 @@ class PurchaseOrdersTestCase(unittest.TestCase):
     def tearDown(self):
         self.driver.get('http://www.caibab.com/index')
 
-    # 已登录状态下，使用有报价权限的供应商去报价公示时间未开始的采购单
+    # 已登录状态下，使用有报价权限的供应商去报价公开时间未开始的采购单
     def test_notShow(self):
         orderId = "WHZHX20190612015"
         #搜索单号
@@ -28,7 +28,7 @@ class PurchaseOrdersTestCase(unittest.TestCase):
         flag = common.isElementExistWithCssSelector(self.driver,'#root > div > div > div.wrap > div.clearfix._34phGAdkvl-wtAiyH9vAHc > div > div.clearfix > div > p')
         self.assertEqual(True,flag)
 
-    # 已登录状态下，使用有报价权限的供应商去报价处于公示时间，报名未开始阶段的采购单
+    # 已登录状态下，使用有报价权限的供应商去报价处于公开时间，公示时间未结束（报名未开始）的采购单
     def test_notStarted(self):
         orderId = "WHZHX20190612002"
         # 先清空 再搜索
@@ -46,10 +46,11 @@ class PurchaseOrdersTestCase(unittest.TestCase):
         self.driver.close()
         self.driver.switch_to.window(self.driver.window_handles[0])
 
-    # 已登录状态下，使用有报价权限的供应商去报价处于公示时间，报名已开始的采购单
+    # 已登录状态下，使用有报价权限的供应商去报价处于公开时间，公示时间已结束（报名已开始）的采购单
     def test_signup_notStarted(self):
         # 点击搜索，进入采购单页面
-        self.driver.find_element_by_class_name("head-search-btn").click()
+        #self.driver.find_element_by_class_name('head-search-input').send_keys('WHZHX20190613007')
+        self.driver.find_element_by_class_name('head-search-btn').click()
         # 点击立即报价
         submit = self.driver.find_element_by_css_selector('#root > div > div > div.wrap > div.clearfix._34phGAdkvl-wtAiyH9vAHc > div > div.clearfix > div:nth-child(1) > div.clearfix._3FAgZnx0-H3B9UKC6CTJeb > div.right._21k08nZzyAB_e_XyaXVbtp > a')
         submit.click()
@@ -74,10 +75,11 @@ class PurchaseOrdersTestCase(unittest.TestCase):
             self.driver.close()
             # 切回当前窗口
             self.driver.switch_to.window(self.driver.window_handles[0])
-            sleep(0.5)
+            sleep(1)
             # 搜索该采购单
-            self.driver.find_element_by_xpath("//form[@id='pageForm']//input[@name='keyword']").send_keys(orderNo)
-            self.driver.find_element_by_xpath("//form[@id='pageForm']//button[text()='搜索']").click()
+            self.driver.find_element_by_class_name('head-search-input').clear()
+            self.driver.find_element_by_class_name('head-search-input').send_keys(orderNo)
+            self.driver.find_element_by_class_name('head-search-btn').click()
 
             # 判断采购单是否存在
             flag = common.isElementExistWithCssSelector(self.driver,'#root > div > div > div.wrap > div.clearfix._34phGAdkvl-wtAiyH9vAHc > div > div.clearfix > div > div.clearfix._3pZvOZtS-Smo95JcxSKPOj > div.PEjczqWJTBByJt4C48alk')
