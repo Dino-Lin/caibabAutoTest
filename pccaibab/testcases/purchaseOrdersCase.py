@@ -18,9 +18,9 @@ class PurchaseOrdersTestCase(unittest.TestCase):
     def tearDown(self):
         self.driver.get('http://www.caibab.com/index')
 
-    # 已登录状态下，使用有报价权限的供应商去报价公开时间未开始的采购单
+    # 用例1：已登录状态下，使用有报价权限的供应商去报价公开时间未开始的采购单
     def test_notShow(self):
-        orderId = "WHZHX20190612015"
+        orderId = "WHZHX20190612015"   # 该用例还没有优化完成
         #搜索单号
         self.driver.find_element_by_class_name("head-search-input").send_keys(orderId)
         self.driver.find_element_by_class_name("head-search-btn").click()
@@ -28,16 +28,14 @@ class PurchaseOrdersTestCase(unittest.TestCase):
         flag = common.isElementExistWithCssSelector(self.driver,'#root > div > div > div.wrap > div.clearfix._34phGAdkvl-wtAiyH9vAHc > div > div.clearfix > div > p')
         self.assertEqual(True,flag)
 
-    # 已登录状态下，使用有报价权限的供应商去报价处于公开时间，公示时间未结束（报名未开始）的采购单
-    def test_notStarted(self):
-        orderId = "WHZHX20190612002"
-        # 先清空 再搜索
-        self.driver.find_element_by_class_name("head-search-input").clear()
-        self.driver.find_element_by_class_name("head-search-input").send_keys(orderId)
+    # 用例2：已登录状态下，使用有报价权限的供应商去报价处于公开时间，公示时间未结束（报名未开始）的采购单
+    def test_SignupNotStart(self):
+        # 点击搜索，刷新页面
+        self.driver.find_element_by_class_name("head-search-input").click()
+        # 点击‘立即报价’
         self.driver.find_element_by_class_name("head-search-btn").click()
         # 等待报价按钮出现
-        submit = self.driver.find_element_by_link_text('立即报价')
-        submit.click()
+        submit = self.driver.find_element_by_link_text('立即报价').click()
         # 等待详情页报价按钮出现
         self.driver.switch_to.window(self.driver.window_handles[-1])
         flag = common.isElementExistWithCssSelector(self.driver,'#root > div > div > div.wrap > div.clearfix._2EhXdGEzvtQG7cgG83tuPF > div.right._3wabwNSbYm9Vib0y4vqTw8 > div.iY946Gz-I5wmrBrCFS8Lv > div.clearfix._2vnIxjgzYdrwataLGpgJRU > div._3AsDEBG-vJW6ptvgvUHMjN > div > a')
@@ -46,10 +44,9 @@ class PurchaseOrdersTestCase(unittest.TestCase):
         self.driver.close()
         self.driver.switch_to.window(self.driver.window_handles[0])
 
-    # 已登录状态下，使用有报价权限的供应商去报价处于公开时间，公示时间已结束（报名已开始）的采购单
-    def test_signup_notStarted(self):
+    # 用例3：已登录状态下，使用有报价权限的供应商去报价处于公开时间，公示时间已结束（报名已开始）的采购单
+    def test_signupStarted(self):
         # 点击搜索，进入采购单页面
-        #self.driver.find_element_by_class_name('head-search-input').send_keys('WHZHX20190613007')
         self.driver.find_element_by_class_name('head-search-btn').click()
         # 点击立即报价
         submit = self.driver.find_element_by_css_selector('#root > div > div > div.wrap > div.clearfix._34phGAdkvl-wtAiyH9vAHc > div > div.clearfix > div:nth-child(1) > div.clearfix._3FAgZnx0-H3B9UKC6CTJeb > div.right._21k08nZzyAB_e_XyaXVbtp > a')
@@ -85,21 +82,23 @@ class PurchaseOrdersTestCase(unittest.TestCase):
             flag = common.isElementExistWithCssSelector(self.driver,'#root > div > div > div.wrap > div.clearfix._34phGAdkvl-wtAiyH9vAHc > div > div.clearfix > div > div.clearfix._3pZvOZtS-Smo95JcxSKPOj > div.PEjczqWJTBByJt4C48alk')
             self.assertEqual(True, flag)
 
-    # 已登录状态下，使用有报价权限的供应商去报名已截止的采购单
-    def test_signup_End(self):
-        orderId = "WHZHX20190612001"
-        # 先清空 在搜索
-        self.driver.find_element_by_class_name("head-search-input").clear()
-        self.driver.find_element_by_class_name("head-search-input").send_keys(orderId)
+    # 用例4：已登录状态下，使用有报价权限的供应商去报名已截止的采购单
+    def test_signupEnd(self):
+        # 搜索，刷新采购单列表
+        # self.driver.find_element_by_class_name("head-search-input").click()
         self.driver.find_element_by_class_name("head-search-btn").click()
+        sleep(1)
         # 点击立即报价
         submit = self.driver.find_element_by_css_selector('#root > div > div > div.wrap > div.clearfix._34phGAdkvl-wtAiyH9vAHc > div > div.clearfix > div > div.clearfix._3FAgZnx0-H3B9UKC6CTJeb > div.right._21k08nZzyAB_e_XyaXVbtp > a')
         submit.click()
+        sleep(1)
         # 等待详情页报价按钮出现
         self.driver.switch_to.window(self.driver.window_handles[-1])
         flag = common.isElementExistWithLinkText(self.driver, '报价已截止')
+        sleep(1)
         # 判断字段是否存在
         self.assertEqual(True, flag)
+        sleep(1)
         self.driver.close()
         self.driver.switch_to.window(self.driver.window_handles[0])
     @classmethod

@@ -82,15 +82,15 @@ class ProductPurchaseTestCase(unittest.TestCase):
             self.driver.find_element_by_name('addr').send_keys("盘福路888号7楼")
             self.driver.find_element_by_name('phone').send_keys("18888888888")
             self.driver.find_element_by_css_selector('#root > div > div.wrap.clearfix > div > div.cbb-modal-component > div.cbb-modal-wrap > div > div > div.cbb-modal-body > div > div._3I7KMBRllnatofzyOdupE6 > a.btn.btn-orange').click()
-        #记录提交订单价格
+        # 记录提交订单价格
         sleep(1)
         price1 = self.driver.find_element_by_class_name('kVghzsx9F7vxFasMLuuu7').text
         payType = self.driver.find_element_by_name('payType')
-        #选择付款方式
+        # 选择付款方式
         payType.find_element_by_xpath("//option[@value='A']").click()
-        #选择送货日期
+        # 选择送货日期
         self.driver.find_element_by_class_name('ant-calendar-picker-input').click()
-        #选择今天
+        # 选择今天
         self.driver.find_element_by_class_name('ant-calendar-today-btn').click()
         self.driver.find_element_by_name('remark').send_keys('123123123213123213123213')
         # 提交产品购买
@@ -144,6 +144,7 @@ class ProductPurchaseTestCase(unittest.TestCase):
         '''添加进货单后购买'''
         self.driver.find_element_by_xpath('//*[@id="headMenu"]/div/ul/li[2]/a').click()
         self.driver.switch_to.window(self.driver.window_handles[-1])
+        sleep(1)
         self.driver.find_element_by_class_name('head-search-input').send_keys('公牛开关插座86型面板')
         self.driver.find_element_by_class_name('head-search-btn').click()
         # 找到第二个产品，点击立即购买
