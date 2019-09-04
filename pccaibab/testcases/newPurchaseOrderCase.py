@@ -85,6 +85,7 @@ class NewPurchaseOrderTestCase(unittest.TestCase):
 
         # 确认发布
         a = self.driver.switch_to.alert()
+        sleep(1)
         print(a.text)   # 打印弹出框文本
         a.accept()    # 确定
 

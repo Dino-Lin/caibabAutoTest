@@ -101,6 +101,7 @@ class PurchaseOrdersTestCase(unittest.TestCase):
         sleep(1)
         self.driver.close()
         self.driver.switch_to.window(self.driver.window_handles[0])
+
     @classmethod
     def tearDownClass(cls) -> None:
             cls.driver.quit()

@@ -14,9 +14,10 @@ class CommonLogin:
         self.driver.find_element_by_id("password").send_keys(password)
         if (common.isElementExist(self.driver, "//input[@id='j_captcha_response']")):
             print("需要输入验证码")
-            self.driver.find_element_by_id("j_captcha_response").send_keys("qwer")
         else:
             pass
+            #self.driver.find_element_by_id("j_captcha_response").send_keys("qwer")
+
         self.driver.find_element_by_id("btnLogin").click()
 
 
@@ -49,7 +50,7 @@ class CommonLogin:
         self.driver.find_element_by_xpath('//*[@name="loginName"]').send_keys('whwh')
         self.driver.find_element_by_xpath('//input[@id="password"]').send_keys('888888')
         # 输入校验码qwer
-        self.driver.find_element_by_xpath('//input[@name="checkCode"]').send_keys('qwer')
+        #self.driver.find_element_by_xpath('//input[@name="checkCode"]').send_keys('qwer')
         # 点击登录
         self.driver.find_element_by_class_name('btn-orange').click()
         # 如出现弹窗，忽略alert弹窗
@@ -61,6 +62,8 @@ class CommonLogin:
         self.driver.get("http://cgcoms.caibab.com/login.do") # 打开网站
         self.driver.implicitly_wait(2)
         # 输入账号密码
+        self.driver.find_element_by_xpath('//input[@name="loginName"]').clear()
+        self.driver.find_element_by_xpath('//input[@name="password"]').clear()
         self.driver.find_element_by_xpath('//input[@name="loginName"]').send_keys('admin')
         self.driver.find_element_by_xpath('//input[@name="password"]').send_keys('111111')
         # 输入校验码qwer
@@ -68,5 +71,5 @@ class CommonLogin:
         # 点击登录
         self.driver.find_element_by_xpath('//a[text()="登录"]').click()
 
-    def yysLogin(self):
+
         pass
