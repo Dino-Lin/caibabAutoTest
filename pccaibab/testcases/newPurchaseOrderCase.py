@@ -11,6 +11,13 @@ from utils import common
 from selenium.webdriver.support.ui import Select
 import datetime
 
+'''
+采购清单报价时间的脚本
+1、已登录集采通，新建一个报名已开始的采购单
+2、已登录集采通，新建一个报名未开始的采购单
+3、已登录集采通，新建一个报名已截止的采购单
+'''
+
 class NewPurchaseOrderTestCase(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

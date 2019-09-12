@@ -21,7 +21,7 @@ import datetime
 7、采购商发布一个采购单并审核
 8、供应商在材巴巴平台报价
 9、采购商添加一个竞价单
-
+10、cgcoms后台审核竞价的报名
 '''
 
 
@@ -322,7 +322,7 @@ class CommonFunction:
                 self.driver.find_elements_by_xpath('//a[@data-title="竞价单审核"]')[0].click()   # 点击审核
                 self.driver.find_element_by_xpath('//input[@value="通过"]').click()  # 审核通过
 
-            #  9、cgcoms后台审核竞价的报名
+            #  10、cgcoms后台审核竞价的报名
             def exam_bidding_list_enroll(self, driver):
                 self.driver = driver
                 commonLogin.CommonLogin.cgcomsLogin(commonLogin.CommonLogin.cgcomsLogin, self.driver) # 登录

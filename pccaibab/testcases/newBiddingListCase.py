@@ -14,7 +14,7 @@ from selenium.webdriver.common.keys import Keys
 import datetime
 
 # 备注：这是一个新建竞价单，供应商报价竞价单的用例，供应商报价竞价单
-
+# 用例1：已登录集采通，新建一个竞价单
 class NewBiddingListTestCase(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
