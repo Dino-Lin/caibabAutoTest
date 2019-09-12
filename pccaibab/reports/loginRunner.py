@@ -8,7 +8,8 @@ import datetime
 
 if __name__ == "__main__":
     suite = unittest.TestSuite()
-    test_cases = [loginCase.LoginTestCase("test_empty_username"),loginCase.LoginTestCase("test_empty_password"),loginCase.LoginTestCase("test_error_username"),loginCase.LoginTestCase("test_login_success")]
+    test_cases = [loginCase.LoginTestCase("test_right_message"),loginCase.LoginTestCase("test_wrong_password"),loginCase.LoginTestCase("test_not_regist"),loginCase.LoginTestCase("test_not_used")
+                  ,loginCase.LoginTestCase("test_empty_message"),loginCase.LoginTestCase("test_empty_username"),loginCase.LoginTestCase("test_empty_password")]
     suite.addTests(test_cases)
     fileEnd = datetime.datetime.now().strftime('%Y%m%d%H%M')
     filePath = 'F:\\HTMLTestReportCN'+fileEnd+'.html'

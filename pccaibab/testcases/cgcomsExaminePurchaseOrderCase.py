@@ -23,7 +23,8 @@ class ExaminePurchaseOrderTestCase(unittest.TestCase):
    def tearDown(self):
        self.driver.get('http://cgcoms.caibab.com')
 
-   # 用例1：已登录后台，审核采购单
+
+   '''用例1：已登录后台，审核采购单'''
    def test_ExaminePurchaseOrder(self):
         # 点击‘采购管理’
         self.driver.find_elements_by_xpath('//span[text()="采购管理"]')[0].click()

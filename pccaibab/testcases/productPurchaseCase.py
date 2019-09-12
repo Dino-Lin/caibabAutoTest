@@ -9,14 +9,23 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 from utils import common
 from commons import commonLogin
-'''产品购买用例'''
+'''
+产品购买用例
+1、低于最小购买量
+2、高于最大购买量
+3、正常购买步骤
+4、添加进货单后购买
+
+'''
+
 class ProductPurchaseTestCase(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = webdriver.Chrome()
         commonLogin.CommonLogin.cgsLogin(commonLogin.CommonLogin, cls.driver)
+
+    '''1、低于最小购买量'''
     def test_minBuy(self):
-        '''低于最小购买量'''
         self.driver.find_element_by_xpath('//*[@id="headMenu"]/div/ul/li[2]/a').click()
         self.driver.switch_to.window(self.driver.window_handles[-1])
         self.driver.find_element_by_class_name('head-search-input').send_keys('公牛开关插座86型面板')
@@ -33,8 +42,9 @@ class ProductPurchaseTestCase(unittest.TestCase):
         self.driver.switch_to.window(self.driver.window_handles[-1])
         self.driver.close()
         self.driver.switch_to.window(self.driver.window_handles[0])
+
+    '''2、高于最大购买量'''
     def test_maxBuy(self):
-        '''高于最大购买量'''
         self.driver.find_element_by_xpath('//*[@id="headMenu"]/div/ul/li[2]/a').click()
         self.driver.switch_to.window(self.driver.window_handles[-1])
         self.driver.find_element_by_class_name('head-search-input').send_keys('公牛开关插座86型面板')
@@ -50,8 +60,9 @@ class ProductPurchaseTestCase(unittest.TestCase):
         self.driver.switch_to.window(self.driver.window_handles[-1])
         self.driver.close()
         self.driver.switch_to.window(self.driver.window_handles[0])
+
+    '''3、正常购买步骤'''
     def test_normalBuy(self):
-        '''正常购买步骤'''
         self.driver.find_element_by_xpath('//*[@id="headMenu"]/div/ul/li[2]/a').click()
         self.driver.switch_to.window(self.driver.window_handles[-1])
         self.driver.find_element_by_class_name('head-search-input').send_keys('公牛开关插座86型面板')
@@ -140,8 +151,9 @@ class ProductPurchaseTestCase(unittest.TestCase):
         self.driver.close()
         # 切回上一个窗口
         self.driver.switch_to.window(self.driver.window_handles[0])
+
+    '''4、添加进货单后购买'''
     def test_addAndBuy(self):
-        '''添加进货单后购买'''
         self.driver.find_element_by_xpath('//*[@id="headMenu"]/div/ul/li[2]/a').click()
         self.driver.switch_to.window(self.driver.window_handles[-1])
         sleep(1)

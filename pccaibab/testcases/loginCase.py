@@ -6,7 +6,18 @@ from time import sleep
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from utils import common
+'''
+登录的测试用例
 
+1、输入已注册的用户名和正确的密码，验证是否成功登录
+2、输入已注册的用户名和不正确的密码，验证是否成功失败，且提示信息正确
+3、输入未注册的用户名和任意密码，验证是否登录失败，且提示信息正确
+4、使用被禁用用户登录，验证是否登录失败
+5、用户名和密码两者都为空，验证是否登录失败，且提示信息正确
+6、用户名为空，验证是否登录失败，并且提示信息正确
+7、密码为空，验证是否登录失败，提示信息正确
+
+'''
 class LoginTestCase(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
@@ -30,30 +41,47 @@ class LoginTestCase(unittest.TestCase):
     def tearDown(self):
         self.driver.quit()
 
-    def test_empty_username(self):
-        '''账号为空'''
+    '''1、正确的用户名，正确的密码'''
+    def test_right_message(self):
+        self.login("huahua123456","huahua123456")
+        right_message = self.driver.find_element_by_xpath('//*[text()="花都山卡拉公司"]').text
+        self.assertEqual(right_message,"花都山卡拉公司")
+
+    '''2、正确的用户名，不正确的密码'''
+    def test_wrong_password(self):
+        self.login("huahua123456", "huahua1234567")
+        right_message = self.driver.find_element_by_xpath('//*[text()="您输入的密码和账户名不匹配，请重新输入。"]').text
+        self.assertEqual(right_message, "您输入的密码和账户名不匹配，请重新输入。")
+
+    '''3、输入未注册的用户名和任意密码'''
+    def test_not_regist(self):
+        self.login("jdjajasj123456", "fjdjjd999")
+        message = self.driver.find_element_by_xpath('//*[text()="登录帐号不存在"]').text
+        self.assertEqual(message,'登录帐号不存在')
+
+    '''4、使用被禁用用户登录'''
+    def test_not_used(self):
+        self.login("hua123", "88888888")
+        message = self.driver.find_element_by_xpath('//*[text()="用户名或密码错误"]').text
+        self.assertEqual('用户名或密码错误')
+
+    '''5、用户名密码都为空'''
+    def test_empty_message(self):
         self.login("","")
         error_message = self.driver.find_element_by_class_name("errors").text
         self.assertEqual(error_message, '请输入用户名!')
 
+    '''6、用户名为空 '''
+    def test_empty_username(self):
+        self.login("", "88888888")
+        error_message = self.driver.find_element_by_class_name("errors").text
+        self.assertEqual(error_message, '请输入用户名!')
+
+    '''7、密码为空'''
     def test_empty_password(self):
-        '''密码为空'''
         self.login("vv66", "")
         error_message = self.driver.find_element_by_class_name("errors").text
         self.assertEqual(error_message, '请输入密码!')
-
-    def test_error_username(self):
-        '''账号不存在'''
-        self.login("asxsax", "12345678")
-        error_message = self.driver.find_element_by_xpath("//div[@id='status']").text
-        self.assertEqual(error_message,'登录帐号不存在')
-
-    def test_login_success(self):
-        '''账号密码正确'''
-        self.login("vv66", "12345678")
-        sleep(1)
-        username = self.driver.find_element_by_xpath('//*[@id="masthead"]/div/div[1]/div/p/a').text
-        self.assertEqual(username,'66供应商')
 
 if __name__ == "__main__":
     unittest.main()
