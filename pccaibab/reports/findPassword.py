@@ -1,14 +1,14 @@
 import sys
 sys.path.append('../')
 import unittest
-from testcases import suppliersRegistrationCase
+from testcases import findPasswordCase
 from utils import HTMLTestReportCN
 import datetime
 
 
 if __name__ == "__main__":
     suite = unittest.TestSuite()
-    test_cases = [suppliersRegistrationCase.suppliersRegistrationCase("test_001"),suppliersRegistrationCase.suppliersRegistrationCase("test_002"),suppliersRegistrationCase.suppliersRegistrationCase("test_003")]
+    test_cases = [findPasswordCase.FindPasswordTestCase("test_001"),findPasswordCase.FindPasswordTestCase("test_002"),findPasswordCase.FindPasswordTestCase("test_003"),findPasswordCase.FindPasswordTestCase("test_004")]
     suite.addTests(test_cases)
     fileEnd = datetime.datetime.now().strftime('%Y%m%d%H%M')
     filePath = 'F:\\HTMLTestReportCN'+fileEnd+'.html'
