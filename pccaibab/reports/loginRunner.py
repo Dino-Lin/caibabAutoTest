@@ -12,7 +12,7 @@ if __name__ == "__main__":
                   ,loginCase.LoginTestCase("test_empty_message"),loginCase.LoginTestCase("test_empty_username"),loginCase.LoginTestCase("test_empty_password")]
     suite.addTests(test_cases)
     fileEnd = datetime.datetime.now().strftime('%Y%m%d%H%M')
-    filePath = 'F:\\HTMLTestReportCN'+fileEnd+'.html'
+    filePath = 'C:\\HTMLTestReportCN'+fileEnd+'.html'
     fp = open(filePath, 'wb')
     # 生成报告的Title,描述
     runner = HTMLTestReportCN.HTMLTestRunner(

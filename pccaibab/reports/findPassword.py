@@ -11,7 +11,7 @@ if __name__ == "__main__":
     test_cases = [findPasswordCase.FindPasswordTestCase("test_001"),findPasswordCase.FindPasswordTestCase("test_002"),findPasswordCase.FindPasswordTestCase("test_003"),findPasswordCase.FindPasswordTestCase("test_004")]
     suite.addTests(test_cases)
     fileEnd = datetime.datetime.now().strftime('%Y%m%d%H%M')
-    filePath = 'F:\\HTMLTestReportCN'+fileEnd+'.html'
+    filePath = 'C:\\HTMLTestReportCN'+fileEnd+'.html'
     fp = open(filePath, 'wb')
     # 生成报告的Title,描述
     runner = HTMLTestReportCN.HTMLTestRunner(
